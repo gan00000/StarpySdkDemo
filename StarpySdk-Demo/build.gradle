@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    //配置编译  26
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86"  // 根据游戏so指定要ndk需要兼容的架构(这样其他依赖包里mips之类的so会被过滤掉)
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            //添加下面的配置，值 需要跟对接人员沟通索要
+            resValue "string", "facebook_app_name", "与对接人员沟通索要"
+            resValue "string", "facebook_app_id", "与对接人员沟通索要"
+            resValue "string", "facebook_authorities", "与对接人员沟通索要"
+            resValue "string", "google_app_id", "与对接人员沟通索要"
+        }
+
+        debug {
+
+            //添加下面的配置，值 需要跟对接人员沟通索要
+            resValue "string", "facebook_app_name", "与对接人员沟通索要"
+            resValue "string", "facebook_app_id", "与对接人员沟通索要"
+            resValue "string", "facebook_authorities", "与对接人员沟通索要"
+            resValue "string", "google_app_id", "与对接人员沟通索要"
+
+        }
+    }
+
+    // Specifies two flavor dimensions.
+    flavorDimensions "all"
+    productFlavors {
+        //apk签名文件 与 对接人员沟通索要
+        demo {
+            minSdkVersion 18
+            applicationId 'com.starpy.demo'
+            targetSdkVersion 22
+            versionCode 1
+            versionName '1.0'
+            dimension "all"
+        }
+
+    }
+
+    android {
+        lintOptions {
+            checkReleaseBuilds false
+            // Or, if you prefer, you can continue to check for errors in release builds,
+            // but continue the build even when errors are found:
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    //SDK   添加以下配置以依赖SDK,具体版本对接的时候与SDK人员沟通确定
+    compile 'com.starpy.sdk:starpy-sdk:1.9'
+
+}
