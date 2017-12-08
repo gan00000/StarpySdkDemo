@@ -18,20 +18,20 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            //添加下面的配置，值 需要跟对接人员沟通索要
-            resValue "string", "facebook_app_name", "与对接人员沟通索要"
-            resValue "string", "facebook_app_id", "与对接人员沟通索要"
-            resValue "string", "facebook_authorities", "与对接人员沟通索要"
-            resValue "string", "google_app_id", "与对接人员沟通索要"
+            //添加下面的配置，值 需要 SDK 对接人员提供
+            resValue "string", "facebook_app_name", "对接时候提供"
+            resValue "string", "facebook_app_id", "对接时候提供"
+            resValue "string", "facebook_authorities", "对接时候提供"
+            resValue "string", "google_app_id", "对接时候提供"
         }
 
         debug {
 
-            //添加下面的配置，值 需要跟对接人员沟通索要
-            resValue "string", "facebook_app_name", "与对接人员沟通索要"
-            resValue "string", "facebook_app_id", "与对接人员沟通索要"
-            resValue "string", "facebook_authorities", "与对接人员沟通索要"
-            resValue "string", "google_app_id", "与对接人员沟通索要"
+            //添加下面的配置，值 需要 SDK 对接人员提供
+            resValue "string", "facebook_app_name", "对接时候提供"
+            resValue "string", "facebook_app_id", "对接时候提供"
+            resValue "string", "facebook_authorities", "对接时候提供"
+            resValue "string", "google_app_id", "对接时候提供"
 
         }
     }
