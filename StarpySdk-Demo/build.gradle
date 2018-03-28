@@ -17,21 +17,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-            //添加下面的配置，值 需要 SDK 对接人员提供
-            resValue "string", "facebook_app_name", "对接时候提供"
-            resValue "string", "facebook_app_id", "对接时候提供"
-            resValue "string", "facebook_authorities", "对接时候提供"
-            resValue "string", "google_app_id", "对接时候提供"
         }
 
         debug {
-
-            //添加下面的配置，值 需要 SDK 对接人员提供
-            resValue "string", "facebook_app_name", "对接时候提供"
-            resValue "string", "facebook_app_id", "对接时候提供"
-            resValue "string", "facebook_authorities", "对接时候提供"
-            resValue "string", "google_app_id", "对接时候提供"
 
         }
     }
@@ -39,6 +27,7 @@ android {
     // Specifies two flavor dimensions.
     flavorDimensions "all"
     productFlavors {
+
         //apk签名文件 与 对接人员沟通索要
         demo {
             minSdkVersion 18
@@ -47,6 +36,13 @@ android {
             versionCode 1
             versionName '1.0'
             dimension "all"
+
+
+            //添加下面的配置，值 需要 SDK 对接人员提供
+            resValue "string", "facebook_app_name", "空城計"
+            resValue "string", "facebook_app_id", "1280020168770346"
+            resValue "string", "facebook_authorities", "com.facebook.app.FacebookContentProvider1280020168770346"
+            resValue "string", "google_app_id", ""
         }
 
     }
