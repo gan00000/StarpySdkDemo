@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
 
-    //配置编译  26
+    //配置编译版本26或以上
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
 
