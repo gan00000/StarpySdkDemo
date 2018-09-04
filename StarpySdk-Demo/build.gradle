@@ -3,8 +3,8 @@ apply plugin: 'com.android.application'
 android {
 
     //配置编译版本26或以上
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
 
     defaultConfig {
@@ -32,14 +32,14 @@ android {
         demo {
             minSdkVersion 18
             applicationId 'com.starpy.demo'
-            targetSdkVersion 22
+            targetSdkVersion 27
             versionCode 1
             versionName '1.0'
             dimension "all"
 
 
             //添加下面的配置，值 需要 SDK 对接人员提供
-            resValue "string", "facebook_app_name", "空城計"
+            resValue "string", "facebook_app_name", "空城計"   //写游戏名字
             resValue "string", "facebook_app_id", "1280020168770346"
             resValue "string", "facebook_authorities", "com.facebook.app.FacebookContentProvider1280020168770346"
             resValue "string", "google_app_id", ""
@@ -63,9 +63,9 @@ configurations.all {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     //SDK   添加以下配置以依赖SDK,具体版本对接的时候与SDK人员沟通确定
-    compile 'com.starpy.sdk:starpy-sdk:2.+'
+    implementation 'com.starpy.sdk:starpy-sdk:2.+'
 
 }
