@@ -6,13 +6,6 @@ android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
 
-
-    defaultConfig {
-        ndk {
-            abiFilters "armeabi", "armeabi-v7a", "x86"  // 根据游戏so指定要ndk需要兼容的架构(这样其他依赖包里mips之类的so会被过滤掉)
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -43,6 +36,10 @@ android {
             resValue "string", "facebook_app_id", "1280020168770346"
             resValue "string", "facebook_authorities", "com.facebook.app.FacebookContentProvider1280020168770346"
             resValue "string", "google_app_id", ""
+
+            ndk {
+                abiFilters "armeabi", "armeabi-v7a", "x86"  // 根据游戏so指定要ndk需要兼容的架构(这样其他依赖包里mips之类的so会被过滤掉)
+            }
         }
 
     }
