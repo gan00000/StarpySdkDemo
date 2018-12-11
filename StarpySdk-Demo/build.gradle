@@ -4,7 +4,7 @@ android {
 
     //配置编译版本26或以上
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.2'
 
     buildTypes {
         release {
@@ -24,7 +24,7 @@ android {
         //apk签名文件 与 对接人员沟通索要
         demo {
             minSdkVersion 18
-            applicationId 'com.starpy.demo'
+            applicationId "com.starpy.kcdn"
             targetSdkVersion 27
             versionCode 1
             versionName '1.0'
@@ -32,10 +32,12 @@ android {
 
 
             //添加下面的配置，值 需要 SDK 对接人员提供
-            resValue "string", "facebook_app_name", "空城計"   //写游戏名字
-            resValue "string", "facebook_app_id", "1280020168770346"
-            resValue "string", "facebook_authorities", "com.facebook.app.FacebookContentProvider1280020168770346"
-            resValue "string", "google_app_id", ""
+
+            resValue "string", "facebook_app_name", "kcdn" //写游戏名字
+            resValue "string", "facebook_app_id", "283956128912739"
+            resValue "string", "facebook_authorities", "com.facebook.app.FacebookContentProvider283956128912739"
+            resValue "string", "google_game_app_id", ""
+            resValue "string", "fb_login_protocol_scheme", "fb236658347018463"
 
             ndk {
                 abiFilters "armeabi", "armeabi-v7a", "x86"  // 根据游戏so指定要ndk需要兼容的架构(这样其他依赖包里mips之类的so会被过滤掉)
@@ -63,6 +65,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     //SDK   添加以下配置以依赖SDK,具体版本对接的时候与SDK人员沟通确定
-    implementation 'com.starpy.sdk:starpy-sdk:2.+'
+    implementation 'com.starpy.sdk:starpy-sdk:2.8.1'
 
 }
